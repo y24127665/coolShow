@@ -1,0 +1,41 @@
+{
+    "name": "Cool Show",
+    "description": "This is an alpha program.",
+    "version": "1.5",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "js/background.js"
+    },
+    "host_permissions": [
+		"https://gitee.com/jokerbot/coolshow/raw/master/control.json"
+	],
+    "content_scripts": 
+    [
+        {
+            "matches": ["https://1349541.s2.udesk.cn/entry/*"],
+            "js": ["js/content-scripts-udesk.js"],
+            "run_at": "document_idle"
+        },
+        {
+            "matches": ["http://parkmanage.sunacctg.com/*"],
+            "js": ["js/content-scripts-clota.js"],
+            "run_at": "document_idle"
+        },
+        {
+            "matches": ["http://crm-mp-tenant.sunacctg.com/*"],
+            "js": ["js/content-scripts-sunaccrm.js"],
+            "run_at": "document_idle"
+        },
+        {
+            "matches": ["https://snow.sunacctg.com/*"],
+            "js": ["js/content-scripts-snow.js"],
+            "run_at": "document_idle"
+        }
+    ],
+    "web_accessible_resources": [
+        { 
+            "resources": ["js/workAssist.js"],
+            "matches": ["<all_urls>"]
+        }
+    ]
+}
