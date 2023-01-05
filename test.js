@@ -12,13 +12,3 @@
     }
     console.log(getTime(122));
 }
-
-
-window.onbeforeunload = function (e) {
-        e = e || window.event
-        
-        if (e) {
-            e.returnValue = '置忙时间记录刷新后会重置，建议记录下当前的置忙时间。'
-        }
-        return '置忙时间记录刷新后会重置，建议记录下当前的置忙时间。'
-    }
